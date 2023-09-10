@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 
+	"github.cm/obynonwane/log-service/data"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -18,7 +19,9 @@ const (
 
 var client *mongo.Client
 
-type Config struct{}
+type Config struct {
+	Models data.Models
+}
 
 func main() {
 	mongoClient, err := connectToMongo()
