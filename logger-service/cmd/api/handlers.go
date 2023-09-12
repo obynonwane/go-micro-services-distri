@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.cm/obynonwane/log-service/data"
@@ -14,6 +15,8 @@ type JSONPayload struct {
 func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 	//read json into var
 	var requestPayload JSONPayload
+
+	log.Println("Welome obinna - inside logger")
 
 	_ = app.readJSON(w, r, &requestPayload)
 
